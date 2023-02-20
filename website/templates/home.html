@@ -1,0 +1,59 @@
+{% extends "base.html" %}{% block title %}Home{% endblock %}
+{% block navbar %}
+<div class="header item">
+  Notes
+</div>
+<a
+  class="active item"
+  id="home"
+  href="/">
+  Home
+</a>
+<a
+  class="item"
+  id="settings"
+  href="/settings">
+  Settings
+</a>
+<div class="right menu">
+  <div class="item">
+    <a class="negative ui button" id="logout" href="/logout">Logout</a>
+  </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="container">
+  <h3 id="home-header">My Notes</h3>
+  {% if user.notes|length > 0 %}
+  <div class="ui four column grid">
+    {% for note in user.notes %}
+    <div class="ui card">
+      <div class="content">
+        <div class="header">{{ formatTime(note.date) }}</div>
+      </div>
+      <div class="content">
+        {{ note.data }}
+      </div>
+      <div class="extra content">
+        <div class="ui icon buttons">
+          <button class="ui red basic button" onClick="deleteNote({{ note.id }})">
+            <i class="trash alternate outline icon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+    <h4>You do not have any notes to display</h4>
+  {% endif %}
+  <div style="margin-top: 30px" class="ui divider"></div>
+  <form class="ui form add-note" method="POST">
+    <div id="note-form">
+      <h3>Add a note</h3>
+      <textarea name="note" id="note" class="note-text-area"></textarea>
+      <button type="submit" class="ui primary button">Add Note</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

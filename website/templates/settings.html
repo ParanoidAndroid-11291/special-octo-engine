@@ -1,0 +1,82 @@
+{% extends "base.html" %}{% block title %}Settings{% endblock %}
+{% block navbar %}
+<div class="header item">
+  Notes
+</div>
+<a
+  class="item"
+  id="home"
+  href="/">
+  Home
+</a>
+<a
+  class="active item"
+  id="settings"
+  href="/settings">
+  Settings
+</a>
+<div class="right menu">
+  <div class="item">
+    <a class="negative ui button" id="logout" href="/logout">Logout</a>
+  </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="container">
+  <h3 id="home-header">My Settings</h3>
+  <form class="ui form settings" method="POST">
+    <div class="fields">
+      <div class="field">
+        <label for="first-name">First Name</label>
+        <input
+          type="text"
+          placeholder="First Name"
+          id="first-name"
+          value="{{ user.first_name }}"
+          name="first-name"/>
+      </div>
+      <div class="field">
+        <label for="last-name">Last Name</label>
+        <input
+          type="text"
+          placeholder="Last Name"
+          id="last-name"
+          value="{{ user.last_name }}"
+          name="last-name"/>
+      </div>
+    </div>
+    <div class="field" id="email-field">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        placeholder="Enter email"
+        id="email-input"
+        value="{{ user.email }}"
+        name="email"/>
+    </div>
+    <div class="field" id="password-field">
+      <label for="password-current">Change Password</label>
+      <input
+        type="password"
+        placeholder="Enter current password"
+        id="password-input"
+        name="password-current"/>
+    </div>
+    <div class="field" id="password-field">
+      <input
+        type="password"
+        placeholder="Enter new password"
+        id="password-input"
+        name="password-new"/>
+    </div>
+    <div class="field" id="password-field">
+      <input
+        type="password"
+        placeholder="Confirm new password"
+        id="password-confirm"
+        name="password-confirm"/>
+    </div>
+    <button type="submit" class="ui primary button">Save</button>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "base.html" %}{% block title %}Sign Up{% endblock %}
+{% block navbar %}
+<div class="header item">
+  Notes
+</div>
+<div class="item">
+  <a class="ui primary button" id="signUp" href="/sign-up">Sign Up</a>
+</div>
+<div class="right menu">
+  <div class="item">
+    <a class="ui secondary button" id="login" href="/login">Login</a>
+  </div>
+</div>
+{% endblock %}
+{% block content %}
+  <form class="ui form signup-form" method="POST">
+    <h3>Sign Up</h3>
+    <div class="fields">
+      <div class="field">
+        <label for="first-name">First Name</label>
+        <input
+          type="text"
+          placeholder="First Name"
+          id="first-name"
+          name="first-name"/>
+      </div>
+      <div class="field">
+        <label for="last-name">Last Name</label>
+        <input
+          type="text"
+          placeholder="Last Name"
+          id="last-name"
+          name="last-name"/>
+      </div>
+    </div>
+    <div class="field" id="email-field">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        placeholder="Enter email"
+        id="email-input"
+        name="email"/>
+    </div>
+    <div class="field" id="password-field">
+      <label for="password-new">Password</label>
+      <input
+        type="password"
+        placeholder="Enter password"
+        id="password-input"
+        name="password-new"/>
+    </div>
+    <div class="field" id="password-field">
+      <input
+        type="password"
+        placeholder="Confirm password"
+        id="password-confirm"
+        name="password-confirm"/>
+    </div>
+    <button type="submit" class="ui primary button">Submit</button>
+  </form>
+{% endblock %}

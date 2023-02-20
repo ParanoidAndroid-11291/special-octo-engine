@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.container {
+  margin: 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grid {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#home-header {
+  margin-bottom: 25px;
+}
+
+#note-form {
+  width: 55%;
+}
+
+#note-form > * {
+  margin: 5px 0;
+}
+
+#email-field {
+  width: 30%;
+}
+
+#password-field {
+  width: 30%;
+}

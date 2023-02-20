@@ -1,0 +1,36 @@
+{% extends "base.html" %}{% block title %}Login{% endblock %}
+{% block navbar %}
+<div class="header item">
+  Notes
+</div>
+<div class="item">
+  <a class="ui primary button" id="signUp" href="/sign-up">Sign Up</a>
+</div>
+<div class="right menu">
+  <div class="item">
+    <a class="ui secondary button" id="login" href="/login">Login</a>
+  </div>
+</div>
+{% endblock %}
+{% block content %}
+<form class="ui form login_form" method="POST">
+  <h3>Login</h3>
+  <div class="field" id="email-field">
+    <label for="email">Email</label>
+    <input
+      type="email"
+      placeholder="Enter email"
+      id="email-input"
+      name="email"/>
+  </div>
+  <div class="field" id="password-field">
+    <label for="password">Password</label>
+    <input
+      type="password"
+      placeholder="Enter password"
+      id="password-input"
+      name="password"/>
+  </div>
+  <button type="submit" class="ui primary button">Login</button>
+</form>
+{% endblock %}
